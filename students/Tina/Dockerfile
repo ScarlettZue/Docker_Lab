@@ -1,7 +1,7 @@
 FROM node:20-alpine
 WORKDIR /app
 RUN addgroup -S app && adduser -S app -G app
-COPY package.json ./
+COPY package*.json ./
 RUN npm ci --omit=dev
 COPY server.js ./
 RUN mkdir -p /var/log/app && chown -R app:app /var/log/app
