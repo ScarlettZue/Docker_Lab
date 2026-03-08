@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  svc-daniel:
+    image: casvill/cali-service:v1
+    environment:
+      STUDENT_NAME: Daniel
+      HOOD: Los Alcazares
+    networks:
+      - los-alcazares
+    volumes:
+      - biblioteca-del-pueblo:/var/log/app
+    ports:
+      - "0:8080"
+
+networks:
+  los-alcazares:
+
+volumes:
+  biblioteca-del-pueblo:
